@@ -1,0 +1,103 @@
+.footer {
+    background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
+    color: #6B7280;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    padding: 150px 0 80px 0;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        width: 100%;
+
+        &-top {
+            display: flex;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            padding-bottom: 80px;
+            margin-bottom: 32px;
+
+            &-brand {
+                margin: 20px;
+                width: 20%;
+
+                &-social {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    span {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &-nav {
+                margin: 20px;
+                width: 60%;
+                display: flex;
+                justify-content: space-around;
+
+                &-section {
+                    
+                    &-header {
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 20px;
+
+                        letter-spacing: 0.05em;
+                        text-transform: uppercase;
+
+                        color: #9CA3AF;
+                        padding: 0 auto;
+                        margin: 0 auto;
+                        display: flex;
+                        align-content: center;
+                        justify-content: space-between;
+                    }
+
+                    &-list {
+                        list-style-type: none;
+                        padding: 0;
+
+                        &-item {
+                            cursor: pointer;
+                            font-family: 'Inter';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: #6B7280;
+                            flex: none;
+                            order: 0;
+                            flex-grow: 0;
+                            margin: 3px 0;
+                            display: flex;
+                            align-items: center;
+                            // justify-content: space-between;
+
+                            &:hover {
+                                color: aliceblue;
+                            }
+
+                            svg {
+                                margin-right: 10px; 
+                            }
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
+}

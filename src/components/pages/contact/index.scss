@@ -1,0 +1,214 @@
+.contact-us-header {
+    height: 223px;
+    background: #EEF2FF;
+    // display: grid;
+    // justify-content: center;
+    padding: 45px 145px;
+    margin: 0 0 119px 0;
+
+
+    // div {
+    //     width: 80%;
+    //     display: grid;
+    //     al
+
+        h1 {
+
+            width: 80%;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 54px;
+            display: flex;
+            align-items: center;
+
+            /* logo color */
+
+            background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            align-items: center;
+        }
+    // }
+
+    
+}
+
+.contact-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+
+    &-container {
+        // width: 80%;
+        display: grid;
+        // grid-template: rows;
+        grid-template-columns: 1fr 1fr;
+        
+        
+
+        &-left {
+            width: 100%;
+            display: grid;
+            padding: 56px;
+            background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
+            border-radius: 10px;
+            color: white;
+            gap: 100px;
+            // place-items: center;
+
+            &-header {
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 54px;
+                border: 1px solid #ffeeee;
+                color: #FFFFFF;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            &-body {
+                display: grid;
+                gap: 35px;
+                align-items: center;
+
+                &-item {
+                    display: grid;
+                    grid-template-columns: max-content 1fr;
+                    align-items: center;
+                    gap: 50px;
+
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 30px;
+
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        &-right {
+            display: grid;
+            width: 100%;
+
+            &-form {
+                display: grid;
+                width: 100%;
+                height: 100%;
+                // justify-self: end;
+                // place-content: flex-end;
+                gap: 40px;
+                padding-left: 50px;
+
+                h1 {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 52px;
+                    text-align: center;
+                    letter-spacing: 0.02em;
+                    background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-fill-color: transparent;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                &-description {
+                    // width: 31%;
+                    display: grid;
+                    // align-items: center;
+                    // justify-content: center;
+                    place-items: center;
+                    grid-template: column;
+                    grid-template-columns: 1fr max-content 1fr;
+    
+                    hr {
+                        width: 100%;
+                    }
+    
+                    p {
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 21px;
+                        text-align: center;
+                        letter-spacing: 0.03em;
+                        color: #656464;
+                        padding: 0 10px;
+                    }
+                }
+
+                &-item {
+                    display: grid;
+                    gap: 10px;
+                    padding: 0 20px;
+
+                    &-label {
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 21px;
+                        letter-spacing: 0.03em;
+                        color: #656464;
+                    }
+
+                    input {
+                        // width: 442px;
+                        height: 41px;
+                        left: 43px;
+                        top: 167px;
+                        background: #FEFEFE;
+                        border: 0.8px solid #C0C0C0;
+                        border-radius: 5px;
+                        padding: 12px;
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 400;
+                        // font-size: 11px;
+                        line-height: 16px;
+                        /* identical to box height */
+
+                        letter-spacing: 0.03em;
+
+                        /* light grey */
+
+                        // color: #C0C0C0;
+                    }
+
+                    textarea {
+                        border-radius: 5px;
+                        padding: 12px;
+                    }
+
+                    button {
+                        width: 100%;
+                        font-family: 'Poppins';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 14px;
+                        /* identical to box height, or 88% */
+
+                        text-align: center;
+
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
