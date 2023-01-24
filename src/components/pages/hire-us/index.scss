@@ -48,6 +48,20 @@
                 }
             }
 
+            &-header {
+                max-width: 480px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 30px;
+                background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
+            }
+
             &-form {
                 width: 100%;
                 display: flex;
@@ -170,8 +184,8 @@
             width: 100%;
             display: grid;
             grid-template: row;
-            grid-template-rows: 100px 80px 1fr max-content;
-            gap: 50px;
+            grid-template-rows: max-content max-content 1fr max-content;
+            gap: 30px;
             // display: flex;
             // flex-direction: column;
             // align-items: flex-start;
@@ -191,6 +205,21 @@
                 progress {
                     width: 100%;
                 }
+            }
+
+            &-header {
+                // max-width: 480px;
+                max-width: 578px;
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 30px;
+                background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-fill-color: transparent;
             }
 
             &-form {

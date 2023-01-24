@@ -11,11 +11,9 @@ const ContactUs = props => {
     return (
         <>
             <div className="contact-us-header">
-                {/* <div> */}
-                    <h1>
-                        Contact Us
-                    </h1>
-                {/* </div> */}
+                <h1>
+                    Contact Us
+                </h1>
             </div>
 
             <div className="contact-us">
