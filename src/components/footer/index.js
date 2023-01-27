@@ -18,7 +18,8 @@ const FooterComponent = props => {
                             </div>
                             <div className="footer-container-top-brand-detail-text">
                                 <p className="footer-brand-text-paragraph">
-                                    Making teh world a better place through constructing elegant hierarchy.
+                                    A one-stop tech company specializing in the transformation of ideas into products and businesses; 
+                                    as well as the training of curious students to become highly qualified developers
                                 </p>
                             </div>
                         </div>
@@ -57,35 +58,38 @@ const FooterComponent = props => {
                             </h4>
                             <ul className="footer-container-top-nav-section-list">
                                 <li className="footer-container-top-nav-section-list-item">
-                                    <span>Marketing</span>
+                                    <span>Mobile App development</span>
                                 </li>
                                 <li className="footer-container-top-nav-section-list-item">
-                                    <span>Analytics</span>
+                                    <span>Web app development</span>
                                 </li>
                                 <li className="footer-container-top-nav-section-list-item">
-                                    <span>Commerce</span>
+                                    <span>Game development</span>
                                 </li>
                                 <li className="footer-container-top-nav-section-list-item">
-                                    <span>Insights</span>
+                                    <span>Pnp Microsevices</span>
+                                </li>
+                                <li className="footer-container-top-nav-section-list-item">
+                                    <span>Blockchain Development</span>
                                 </li>
                             </ul>
                         </div>
                         <div className="footer-container-top-nav-section">
                             <h4 className="footer-container-top-nav-section-header">
-                                <span>Solutions</span>
+                                <span>Legals</span>
                             </h4>
                             <ul className="footer-container-top-nav-section-list">
                                 <li className="footer-container-top-nav-section-list-item">
-                                    <span>Marketing</span>
+                                    <span>Privacy Policy</span>
                                 </li>
                                 <li className="footer-container-top-nav-section-list-item">
-                                    <span>Analytics</span>
+                                    <span>Terms & Conditions</span>
                                 </li>
                                 <li className="footer-container-top-nav-section-list-item">
-                                    <span>Commerce</span>
+                                    <span>Licensing Agreement</span>
                                 </li>
                                 <li className="footer-container-top-nav-section-list-item">
-                                    <span>Insights</span>
+                                    <span>Partnership Terms</span>
                                 </li>
                             </ul>
                         </div>
@@ -100,21 +104,21 @@ const FooterComponent = props => {
                                         <path d="M17.6667 2.66406L9.33333 8.4974L1 2.66406" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
 
-                                    <span>info@waylight.me</span>
+                                    <span>info@hackcity.tech</span>
                                 </li>
                                 <li className="footer-container-top-nav-section-list-item">
                                     <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M17.5734 13.4334V15.9334C17.5744 16.1655 17.5268 16.3952 17.4339 16.6079C17.3409 16.8205 17.2045 17.0114 17.0335 17.1683C16.8625 17.3252 16.6606 17.4446 16.4407 17.519C16.2209 17.5934 15.9879 17.621 15.7568 17.6001C13.1925 17.3214 10.7293 16.4452 8.5651 15.0417C6.55162 13.7623 4.84454 12.0552 3.5651 10.0417C2.15675 7.86775 1.2803 5.39258 1.00676 2.81675C0.985939 2.5863 1.01333 2.35405 1.08718 2.13477C1.16104 1.91549 1.27974 1.71399 1.43574 1.5431C1.59173 1.37221 1.7816 1.23567 1.99326 1.14218C2.20491 1.04869 2.43371 1.0003 2.6651 1.00008H5.1651C5.56952 0.9961 5.96159 1.13931 6.26823 1.40302C6.57487 1.66674 6.77516 2.03295 6.83176 2.43341C6.93728 3.23347 7.13297 4.01902 7.4151 4.77508C7.52722 5.07335 7.55148 5.39751 7.48502 5.70915C7.41856 6.02079 7.26415 6.30684 7.0401 6.53341L5.98176 7.59175C7.16806 9.67803 8.89548 11.4055 10.9818 12.5917L12.0401 11.5334C12.2667 11.3094 12.5527 11.155 12.8644 11.0885C13.176 11.022 13.5002 11.0463 13.7984 11.1584C14.5545 11.4405 15.34 11.6362 16.1401 11.7417C16.5449 11.7989 16.9146 12.0028 17.1789 12.3147C17.4432 12.6266 17.5836 13.0247 17.5734 13.4334Z" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
 
-                                    <span>+1-302-467-2761</span>
+                                    <span>+234906333385</span>
                                 </li>
                                 <li className="footer-container-top-nav-section-list-item">
                                     <svg width="17" height="21" viewBox="0 0 17 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16 8.5C16 14.3333 8.5 19.3333 8.5 19.3333C8.5 19.3333 1 14.3333 1 8.5C1 6.51088 1.79018 4.60322 3.1967 3.1967C4.60322 1.79018 6.51088 1 8.5 1C10.4891 1 12.3968 1.79018 13.8033 3.1967C15.2098 4.60322 16 6.51088 16 8.5Z" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M8.5 11C9.88071 11 11 9.88071 11 8.5C11 7.11929 9.88071 6 8.5 6C7.11929 6 6 7.11929 6 8.5C6 9.88071 7.11929 11 8.5 11Z" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    <span>7209 Lancaster Pike,<br></br> Suite 4-1282</span>
+                                    <span>12000 Fairhill Rd <br></br>Cleveland, OH <br></br>44120-1035</span>
                                 </li>
                             </ul>
                         </div>
