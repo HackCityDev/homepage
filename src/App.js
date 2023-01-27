@@ -1,9 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-
-// Components import
-// import NavBarComponent from './components/nav';
 import Layout from './components/layout';
 import IndexComponent from './components/pages/index';
 import JoinUs from './components/pages/join-us';
@@ -18,6 +15,8 @@ import MemberSignUp from './components/pages/join-us/index2';
 import HireUs5 from './components/pages/hire-us/index5';
 import HireUs6 from './components/pages/hire-us/index6';
 import ContactUs from './components/pages/contact';
+import Services from './components/pages/services';
+import { BlockChainDevelopment, MobileDevelopment, WebDevelopment } from './components/pages/services/template';
 
 function App() {
   return (
@@ -38,7 +37,14 @@ function App() {
             <Route path='/hire-us/5' element={<HireUs5 />} />
             <Route path='/hire-us/6' element={<HireUs6 />} />
           </Route>
+
           <Route path='/contact-us' element={<ContactUs />} />
+
+          <Route path='/services' element={<Services />}>
+            <Route path='/services/web' element={<WebDevelopment />} />
+            <Route path='/services/blockchain' element={<BlockChainDevelopment />} />
+            <Route path='/services/mobile' element={<MobileDevelopment />} />
+          </Route>
         </Route>
         <Route path='*' element={<Layout />} />
       </Routes>
