@@ -6,13 +6,21 @@ import { OtherBrands } from "../index";
 const HireUs1 = props => {
     const navigate = useNavigate()
 
+    const [data, setData] = useState({});
+
+    // useEffect(() => {
+    //     document.querySelectorAll('input[type="radio"]').forEach((checkB, index) => {
+    //         const parent = checkB.parentNode;
+    //         parent.setAttribute('for',`checked-1-${index}`);
+    //         checkB.setAttribute('id',`checked-1-${index}`);
+    //     }); 
+    // }, [])
+
+    
     useEffect(() => {
-        document.querySelectorAll('input[type="radio"]').forEach((checkB, index) => {
-            const parent = checkB.parentNode;
-            parent.setAttribute('for',`checked-1-${index}`);
-            checkB.setAttribute('id',`checked-1-${index}`);
-        }); 
-    }, [])
+        console.log(data)
+    }, [data])
+    
     return (
         <>
             <div className="hire-us">
@@ -201,62 +209,62 @@ const HireUs1 = props => {
                             </div>
                             <div className="hire-us-container-right-new-form-list">
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="software as a service" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>SaaS (Software as a Service) Development</span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="web app development" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>Web Application Development</span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="mobile app development" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>Mobile App Development</span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="api development" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>API Development</span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="mvp development" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         MVP Development
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="ui/ux design" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         UI/UX Design
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="blockchain application" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Blockchain Application
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="smart contract" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Smart Contract
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="training" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Training
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name="appPurpose" placeholder="" />
+                                    <input className="" type="radio" value="cunsultation" onChange={e => setData(d => ({...d, purpose_contact: e.target.value}))} name='apphireus'/>
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Consultation
@@ -277,13 +285,13 @@ const HireUs1 = props => {
                                     What can <strong>Hack City Tech</strong> do for you?
                                 </span>
                             </div>
-                            <textarea className="hire-us-container-right-new-form-text" rows={6}/>
+                            <textarea className="hire-us-container-right-new-form-text" rows={6} onChange={e => setData(d => ({...d, purpose_description: e.target.value}))}/>
                         </div>
                         <div className="hire-us-container-right-new-form-submit right-column" style={{gap: 'none !important'}}>
                             <span>
                                 &nbsp;
                             </span>
-                            <button className="btn btn-solid" onClick={() =>navigate('/hire-us/2')}>
+                            <button className="btn btn-solid" onClick={() =>navigate('/hire-us/2', { state: data })}>
                                 <span>Next</span>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.814453 7L14.0005 7" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

@@ -1,11 +1,19 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { HireUsHeader } from "./hire-us-header";
 import { OtherBrands } from "../index";
 
 
 const HireUs3 = props => {
-    const navigate = useNavigate();
+    const { state } = useLocation();
+    const navigate = useNavigate();    
+    const [data2, setData] = useState({...state})
+    // const [data2, setData] = useState(data)
+
+    useEffect(() => {
+      console.log(data2)
+    }, [data2])
+
     return (
       <>
         <div className="hire-us">
@@ -13,7 +21,7 @@ const HireUs3 = props => {
             <div className="hire-us-container-left">
               <span
                 className="hire-us-container-left-arrow"
-                onClick={() => navigate("/hire-us/2")}
+                onClick={() => navigate("/hire-us/2", {state: state})}
               >
                 <svg
                   width="16"
@@ -818,8 +826,10 @@ const HireUs3 = props => {
                     <input
                       className=""
                       type="radio"
-                      name="appTimeLine"
+                      value="short term"
                       placeholder=""
+                      onChange={e => setData(d => ({...d, purpose_timeline: e.target.value}))}
+                      name='apphireus'
                     />
                     <span className="label"></span>
                     <span style={{ marginLeft: 10 }}>
@@ -830,8 +840,10 @@ const HireUs3 = props => {
                     <input
                       className=""
                       type="radio"
-                      name="appTimeLine"
+                      value="medium term"
                       placeholder=""
+                      onChange={e => setData(d => ({...d, purpose_timeline: e.target.value}))}
+                      name='apphireus'
                     />
                     <span className="label"></span>
                     <span style={{ marginLeft: 10 }}>
@@ -842,8 +854,10 @@ const HireUs3 = props => {
                     <input
                       className=""
                       type="radio"
-                      name="appTimeLine"
+                      value="long term"
                       placeholder=""
+                      onChange={e => setData(d => ({...d, purpose_timeline: e.target.value}))}
+                      name='apphireus'
                     />
                     <span className="label"></span>
                     <span style={{ marginLeft: 10 }}>
@@ -888,8 +902,11 @@ const HireUs3 = props => {
                     <input
                       className=""
                       type="radio"
-                      name="appCommencement"
+                      value="immediately"
                       placeholder=""
+                      onChange={e => setData(d => ({...d, purpose_time_estimate: e.target.value}))}
+                      name="appOther"
+
                     />
                     <span className="label"></span>
                     <span style={{ marginLeft: 10 }}>Immediately</span>
@@ -898,8 +915,10 @@ const HireUs3 = props => {
                     <input
                       className=""
                       type="radio"
-                      name="appCommencement"
+                      value="within 2 weeks"
                       placeholder=""
+                      onChange={e => setData(d => ({...d, purpose_time_estimate: e.target.value}))}
+                      name="appOther"
                     />
                     <span className="label"></span>
                     <span style={{ marginLeft: 10 }}>Within 2 weeks</span>
@@ -908,8 +927,11 @@ const HireUs3 = props => {
                     <input
                       className=""
                       type="radio"
-                      name="appCommencement"
+                      value="within a month"
                       placeholder=""
+                      onChange={e => setData(d => ({...d, purpose_time_estimate: e.target.value}))}
+                      name="appOther"
+
                     />
                     <span className="label"></span>
                     <span style={{ marginLeft: 10 }}>Within a month</span>
@@ -918,8 +940,11 @@ const HireUs3 = props => {
                     <input
                       className=""
                       type="radio"
-                      name="appCommencement"
+                      value="not decided"
                       placeholder=""
+                      onChange={e => setData(d => ({...d, purpose_time_estimate: e.target.value}))}
+                      name="appOther"
+
                     />
                     <span className="label"></span>
                     <span style={{ marginLeft: 10 }}>Not decided</span>
@@ -927,7 +952,7 @@ const HireUs3 = props => {
                 </div>
               </div>
               <div className="hire-us-container-right-new-form-submit space-between">
-                <button className="btn" onClick={() => navigate("/hire-us/2")}>
+                <button className="btn" onClick={() => navigate("/hire-us/2", {state: state})}>
                   <svg
                     width="16"
                     height="16"
@@ -978,7 +1003,7 @@ const HireUs3 = props => {
                 </button>
                 <button
                   className="btn btn-solid"
-                  onClick={() => navigate("/hire-us/4")}
+                  onClick={() => navigate("/hire-us/4", {state: data2})}
                 >
                   <span>Next</span>
                   <svg

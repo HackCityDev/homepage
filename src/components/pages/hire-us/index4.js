@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { HireUsHeader } from "./hire-us-header";
 import { OtherBrands } from "../index";
 
 const HireUs4 = (props) => {
-  const navigate = useNavigate();
+  const { state } = useLocation();
+  const navigate = useNavigate();    
+  const [data2, setData] = useState({...state})
+  // const [data2, setData] = useState(data)
+
+  useEffect(() => {
+    console.log(data2)
+  }, [data2])
+
   return (
     <>
       <div className="hire-us">
@@ -12,7 +20,7 @@ const HireUs4 = (props) => {
           <div className="hire-us-container-left">
             <span
               className="hire-us-container-left-arrow"
-              onClick={() => navigate("/hire-us/3")}
+              onClick={() => navigate("/hire-us/3", {state: state})}
             >
               <svg
                 width="16"
@@ -1990,7 +1998,7 @@ const HireUs4 = (props) => {
                   </defs>
                 </svg>
                 <span className="">
-                  When are you likely to start this project?
+                  What is the price estimate for the project?
                 </span>
               </div>
 
@@ -1999,38 +2007,45 @@ const HireUs4 = (props) => {
                   <input
                     className=""
                     type="radio"
-                    name="appCommencement"
+                    value="$1,000 - $3,000+"
                     placeholder=""
+                    onChange={e => setData(d => ({...d, purpose_cost_estimate: e.target.value}))}
+                    name='apphireus'
                   />
                   <span className="label"></span>
-                  <span style={{ marginLeft: 10 }}>Immediately</span>
+                  <span style={{ marginLeft: 10 }}>$1,000 - $3,000+</span>
                 </label>
                 <label className="hire-us-container-right-new-form-list-item horizontal">
                   <input
                     className=""
                     type="radio"
-                    name="appCommencement"
+                    value="$4,000 - $9,000+"
                     placeholder=""
+                    onChange={e => setData(d => ({...d, purpose_cost_estimate: e.target.value}))}
+                    name='apphireus'
                   />
                   <span className="label"></span>
-                  <span style={{ marginLeft: 10 }}>Within 2 weeks</span>
+                  <span style={{ marginLeft: 10 }}>$4,000 - $9,000+</span>
                 </label>
                 <label className="hire-us-container-right-new-form-list-item horizontal">
                   <input
                     className=""
                     type="radio"
-                    name="appCommencement"
+                    value="$10,000 and above"
                     placeholder=""
+                    onChange={e => setData(d => ({...d, purpose_cost_estimate: e.target.value}))}
+                    name='apphireus'
                   />
                   <span className="label"></span>
-                  <span style={{ marginLeft: 10 }}>Within a month</span>
+                  <span style={{ marginLeft: 10 }}>$10,000 and above</span>
                 </label>
                 <label className="hire-us-container-right-new-form-list-item horizontal">
                   <input
                     className=""
                     type="radio"
-                    name="appCommencement"
+                    value="not decided"
                     placeholder=""
+                    onChange={e =>  setData(d => ({...d, purpose_cost_estimate: e.target.value}))}
                   />
                   <span className="label"></span>
                   <span style={{ marginLeft: 10 }}>Not decided</span>
@@ -2038,7 +2053,7 @@ const HireUs4 = (props) => {
               </div>
             </div>
             <div className="hire-us-container-right-new-form-submit space-between">
-              <button className="btn" onClick={() => navigate("/hire-us/3")}>
+              <button className="btn" onClick={() => navigate("/hire-us/3", {state: state})}>
                 <svg
                   width="16"
                   height="16"
@@ -2089,7 +2104,7 @@ const HireUs4 = (props) => {
               </button>
               <button
                 className="btn btn-solid"
-                onClick={() => navigate("/hire-us/5")}
+                onClick={() => navigate("/hire-us/5", {state: data2})}
               >
                 <span>Next</span>
                 <svg

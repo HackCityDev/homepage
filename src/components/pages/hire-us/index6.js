@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { HireUsHeader } from "./hire-us-header";
 import { OtherBrands } from "../index/index";
 
 const HireUs6 = (props) => {
   const navigate = useNavigate();
+  const { state } = useLocation();
+    
+  // const [data2, setData] = useState(data)
   return (
     <>
       <div className="hire-us">
@@ -495,7 +498,8 @@ const HireUs6 = (props) => {
               </div>
             </div>
             <div className="hire-us-container-right-new-form-submit-center">
-              <button className="btn btn-solid" onClick={() => navigate("/")}>
+              <button className="btn btn-solid" onClick={() => {console.log(state)}}>
+              {/* <button className="btn btn-solid" onClick={() => {console.log(data); navigate("/")}}> */}
                 <span>Home page</span>
               </button>
             </div>

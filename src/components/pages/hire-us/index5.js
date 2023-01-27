@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { HireUsHeader } from "./hire-us-header";
 import { OtherBrands } from "../index/index";
 
 const HireUs5 = (props) => {
-  const navigate = useNavigate();
+  const { state } = useLocation();
+  const navigate = useNavigate();    
+  const [data2, setData] = useState({...state})
+
+  useEffect(() => {
+    console.log(data2)
+  }, [data2])
+
   return (
     <>
       <div className="hire-us">
@@ -12,7 +19,7 @@ const HireUs5 = (props) => {
           <div className="hire-us-container-left">
             <span
               className="hire-us-container-left-arrow"
-              onClick={() => navigate("/hire-us/4")}
+              onClick={() => navigate("/hire-us/4", {state: state})}
             >
               <svg
                 width="16"
@@ -891,13 +898,13 @@ const HireUs5 = (props) => {
                   <span className="hire-us-container-right-new-form-list-form-input-label">
                     Full Name
                   </span>
-                  <input type={"text"} placeholder="eg. John Doe" />
+                  <input type={"text"} placeholder="eg. John Doe" onChange={e => setData(d => ({...d, full_name: e.target.value}))}/>
                 </div>
                 <div className="hire-us-container-right-new-form-list-form-input vertical">
                   <span className="hire-us-container-right-new-form-list-form-input-label">
                     Work Email
                   </span>
-                  <input type={"text"} placeholder="eg. johndoe@example.com" />
+                  <input type={"text"} placeholder="eg. johndoe@example.com" onChange={e => setData(d => ({...d, work_email: e.target.value}))}/>
                 </div>
                 {/* </div> */}
                 {/* <div className="hire-us-container-right-new-form-list horizontal"> */}
@@ -905,13 +912,13 @@ const HireUs5 = (props) => {
                   <span className="hire-us-container-right-new-form-list-form-input-label">
                     Company Name
                   </span>
-                  <input type={"text"} placeholder="eg. HackCity Tech Inc." />
+                  <input type={"text"} placeholder="eg. HackCity Tech Inc." onChange={e => setData(d => ({...d, company_name: e.target.value}))}/>
                 </div>
                 <div className="hire-us-container-right-new-form-list-form-input vertical">
                   <span className="hire-us-container-right-new-form-list-form-input-label">
                     Position
                   </span>
-                  <input type={"text"} placeholder="eg. Program Director" />
+                  <input type={"text"} placeholder="eg. Program Director" onChange={e => setData(d => ({...d, position: e.target.value}))}/>
                 </div>
                 {/* </div> */}
               </div>
@@ -948,10 +955,11 @@ const HireUs5 = (props) => {
               <textarea
                 className="hire-us-container-right-new-form-text"
                 rows={6}
+                onChange={e => setData(d => ({...d, other_infomation: e.target.value}))}
               />
             </div>
             <div className="hire-us-container-right-new-form-submit space-between">
-              <button className="btn" onClick={() => navigate("/hire-us/4")}>
+              <button className="btn" onClick={() => navigate("/hire-us/4", {state: state})}>
                 <svg
                   width="16"
                   height="16"
@@ -1002,7 +1010,7 @@ const HireUs5 = (props) => {
               </button>
               <button
                 className="btn btn-solid"
-                onClick={() => navigate("/hire-us/6")}
+                onClick={() => navigate("/hire-us/6", {state: data2})}
               >
                 <span>Next</span>
                 <svg

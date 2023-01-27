@@ -1,16 +1,24 @@
 import React, {useState, useEffect} from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { HireUsHeader } from "./hire-us-header";
 import { OtherBrands } from "../index";
 
 const HireUs2 = props => {
+    const { state } = useLocation();
     const navigate = useNavigate();
+    const [data2, setData] = useState({...state})
+    // const [data2, setData] = useState(data)
+    
+    useEffect(() => {
+        console.log(data2)
+    })
+    
     return (
         <>
             <div className="hire-us">
                 <div className="hire-us-container">
                     <div className="hire-us-container-left">
-                        <span className="hire-us-container-left-arrow" onClick={() => navigate('/hire-us')}>
+                        <span className="hire-us-container-left-arrow" onClick={() => navigate('/hire-us', { state: data2 })}>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.1855 9L1.9995 9" stroke="url(#paint0_linear_857_1770)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M5 13L1 8.5L5 4" stroke="url(#paint1_linear_857_1770)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -265,56 +273,56 @@ const HireUs2 = props => {
                             </div>
                             <div className="hire-us-container-right-new-form-list">
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name='appDomain' placeholder="" />
+                                    <input className="" type="radio" value='healthcare and pharma' onChange={e => setData(d => ({...d, purpose_domain: e.target.value}))}  name='apphireus' />
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Healthcare and Pharma
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name='appDomain' placeholder="" />
+                                    <input className="" type="radio" value='finance / fintech' onChange={e => setData(d => ({...d, purpose_domain: e.target.value}))}  name='apphireus' />
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Fintech/Finance
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name='appDomain' placeholder="" />
+                                    <input className="" type="radio" value='technology company' onChange={e => setData(d => ({...d, purpose_domain: e.target.value}))}  name='apphireus' />
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Technology Company
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name='appDomain' placeholder="" />
+                                    <input className="" type="radio" value='automotive' onChange={e => setData(d => ({...d, purpose_domain: e.target.value}))}  name='apphireus' />
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Automotive
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name='appDomain' placeholder="" />
+                                    <input className="" type="radio" value='logistics & transport' onChange={e => setData(d => ({...d, purpose_domain: e.target.value}))}  name='apphireus' />
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Logistics & Transport
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name='appDomain' placeholder="" />
+                                    <input className="" type="radio" value='education' onChange={e => setData(d => ({...d, purpose_domain: e.target.value}))}  name='apphireus' />
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Education
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name='appDomain' placeholder="" />
+                                    <input className="" type="radio" value='insurance' onChange={e => setData(d => ({...d, purpose_domain: e.target.value}))}  name='apphireus' />
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Insurance
                                     </span>
                                 </label>
                                 <label className="hire-us-container-right-new-form-list-item horizontal">
-                                    <input className="" type="radio" name='appDomain' placeholder="" />
+                                    <input className="" type="radio" value='blockchain' onChange={e => setData(d => ({...d, purpose_domain: e.target.value}))}  name='apphireus' />
                                     <span className="label"></span>
                                     <span style={{marginLeft: 10}}>
                                         Blockchain
@@ -335,10 +343,10 @@ const HireUs2 = props => {
                                     Others
                                 </span>
                             </div>
-                            <textarea className="hire-us-container-right-new-form-text" rows={6}/>
+                            <textarea className="hire-us-container-right-new-form-text" rows={6} onChange={e => setData(d => ({...d, purpose_domain_description: e.target.value}))}/>
                         </div>
                         <div className="hire-us-container-right-new-form-submit space-between">
-                            <button className="btn" onClick={() => navigate('/hire-us')}>
+                            <button className="btn" onClick={() => navigate('/hire-us', {state: state})}>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.1855 9L1.9995 9" stroke="url(#paint0_linear_858_2289)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M5 13L1 8.5L5 4" stroke="url(#paint1_linear_858_2289)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -355,7 +363,7 @@ const HireUs2 = props => {
                                 </svg>
                                 <span>Previous</span>
                             </button>
-                            <button className="btn btn-solid" onClick={() => navigate('/hire-us/3')}>
+                            <button className="btn btn-solid" onClick={() => navigate('/hire-us/3', {state: data2})}>
                                 <span>Next</span>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.814453 7L14.0005 7" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
