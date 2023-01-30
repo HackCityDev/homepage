@@ -12,7 +12,7 @@ const HireUs6 = (props) => {
     <>
       <div className="hire-us">
         <div className="hire-us-container">
-          <div className="hire-us-container-left">
+          <div className="hire-us-container-left-noarrow">
             {/* <span
               className="hire-us-container-left-arrow"
               onClick={() => navigate("/hire-us/5")}
@@ -65,6 +65,7 @@ const HireUs6 = (props) => {
               </svg>
             </span> */}
             <svg
+              className="hire-us-container-left-illustration" 
               width="658"
               height="997"
               viewBox="0 0 658 997"
@@ -465,6 +466,10 @@ const HireUs6 = (props) => {
                 </linearGradient>
               </defs>
             </svg>
+            <div class="hire-us-container-left-text">
+                <h1>Hire Us</h1>
+                <span>Completed</span>
+            </div>
           </div>
           <div className="hire-us-container-right-new">
             <HireUsHeader />
@@ -490,19 +495,20 @@ const HireUs6 = (props) => {
 
               <div
                 className="hire-us-container-right-new-form vertical center"
-                style={{ width: 320, textAlign: "center" }}
+                style={{ width: 320, textAlign: "center", fontSize: 20 }}
               >
                 Thank you for reaching out to us with the important details of
                 your project. One of Management team will reach out to you
                 within 24hours
               </div>
+              <div className="hire-us-container-right-new-form-submit-center">
+                <button className="btn btn-solid" onClick={() => {console.log(state)}}>
+                {/* <button className="btn btn-solid" onClick={() => {console.log(data); navigate("/")}}> */}
+                  <span>Back to Home Page</span>
+                </button>
+              </div>
             </div>
-            <div className="hire-us-container-right-new-form-submit-center">
-              <button className="btn btn-solid" onClick={() => {console.log(state)}}>
-              {/* <button className="btn btn-solid" onClick={() => {console.log(data); navigate("/")}}> */}
-                <span>Home page</span>
-              </button>
-            </div>
+            
           </div>
         </div>
       </div>

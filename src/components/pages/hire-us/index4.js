@@ -70,6 +70,7 @@ const HireUs4 = (props) => {
               </svg>
             </span>
             <svg
+              className="hire-us-container-left-illustration" 
               width="574"
               height="997"
               viewBox="0 0 574 997"
@@ -1961,6 +1962,10 @@ const HireUs4 = (props) => {
                 </linearGradient>
               </defs>
             </svg>
+            <div class="hire-us-container-left-text">
+                <h1>Hire Us</h1>
+                <span>Step Four</span>
+            </div>
           </div>
           <div className="hire-us-container-right-new">
             <HireUsHeader />

@@ -71,6 +71,7 @@ const HireUs3 = props => {
                 </svg>
               </span>
               <svg
+                className="hire-us-container-left-illustration" 
                 width="665"
                 height="997"
                 viewBox="0 0 665 997"
@@ -781,6 +782,10 @@ const HireUs3 = props => {
                   </linearGradient>
                 </defs>
               </svg>
+              <div class="hire-us-container-left-text">
+                  <h1>Hire Us</h1>
+                  <span>Step Three</span>
+              </div>
             </div>
             <div className="hire-us-container-right-new">
               <HireUsHeader />
@@ -821,7 +826,7 @@ const HireUs3 = props => {
                     Which best describes your requirement/engagement timeline?
                   </span>
                 </div>
-                <div className="hire-us-container-right-new-form-list-row vertical left-column">
+                <div className="hire-us-container-right-new-form-list-row">
                   <label className="hire-us-container-right-new-form-list-item horizontal">
                     <input
                       className=""
