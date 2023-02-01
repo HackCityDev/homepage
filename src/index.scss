@@ -5,13 +5,14 @@
 body {
   // width: 1440px;
   margin: 0 auto;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   // font-family: 'Poppins';
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 a {
@@ -24,9 +25,6 @@ code {
     monospace;
 }
 
-* {
-  box-sizing: border-box;
-}
 
 .city-red {
     color: #F44336 !important;

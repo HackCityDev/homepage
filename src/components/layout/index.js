@@ -8,7 +8,7 @@ const Layout = props => {
 
     return (
         <>
-            <section className="layout">
+            <section className="layout border-box w-full">
                 <NavBarComponent />
                 <Outlet />
                 <FooterComponent />

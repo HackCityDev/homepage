@@ -1,4 +1,5 @@
-$breakpoint-mobile: 480px;
+$breakpoint-mobile: 375px;
+// $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px; 
 
@@ -166,18 +167,19 @@ $breakpoint-desktop: 1024px;
 
 @media (max-width: $breakpoint-mobile) {
     .services {
-        width: 100%;
+        width: 100vw;
         display: grid;
         // flex-direction: column;
     
-    
         &-header {
+            width: 100%;
             background: #EEF2FF;
             display: flex;
             justify-content: center;
             margin: 0;
     
             &-content {
+                box-sizing: border-box;
                 background-image: url('./headerbg.svg');
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -189,7 +191,7 @@ $breakpoint-desktop: 1024px;
     
                 h1, p {
                     margin: 0;
-                    padding: 0;
+                    padding: 20;
                 }
     
                 h1 {
@@ -198,7 +200,7 @@ $breakpoint-desktop: 1024px;
                     font-weight: 600;
                     font-size: 36px;
                     line-height: 25px;
-                    padding: 5px 0;
+                    // padding: 0px 0;
                     display: flex;
                     align-items: center;
                     background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
@@ -231,7 +233,7 @@ $breakpoint-desktop: 1024px;
                 width: 100%;
                 display: grid;
                 gap: 80px;
-                margin: 20px 0 20px 0;
+                margin: 0;
     
                 &-content {
                     width: 100%;
@@ -239,7 +241,7 @@ $breakpoint-desktop: 1024px;
                     flex-direction: column-reverse;
                     // grid-template-columns: 1fr 1fr;
                     align-items: center;
-                    justify-items: space-between;
+                    justify-items: center;
                     gap: 20px;
     
                     &-left {
@@ -271,13 +273,9 @@ $breakpoint-desktop: 1024px;
                             font-family: 'Poppins';
                             font-style: normal;
                             font-weight: 400;
-                            font-size: 23px;
+                            font-size: 16px;
                             line-height: 34px;
-    
-                            /* grey */
-    
                             color: #656464;
-                            
                             padding: 0;
                             margin: 0;
                         }
@@ -287,8 +285,11 @@ $breakpoint-desktop: 1024px;
                         width: 100%;
 
                         svg {
-                            width: 100%;
+                            width: 100% !important;
                             display: flex;
+                            justify-content: center;
+                            // align-items: center;
+                            padding: 0 20px;
                         }
                     }
                 }

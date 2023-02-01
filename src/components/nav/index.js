@@ -85,7 +85,7 @@ const NavBarComponent = props => {
                                 </a>
                             </li>
                             <li className="navSection-navigation-links-nav-item">
-                                <a href="/contact-us">
+                                <a onClick={() => navigate("/contact-us")}>
                                     <span>Contact Us</span>
                                     <span>&nbsp;</span>
                                 </a>
@@ -97,68 +97,115 @@ const NavBarComponent = props => {
                         </li>
                     </ul>
                 </div>
-                {/* <Modal />         */}
             </nav>
         </section>
     )
 }
 
 
-// const Modal = ({ show, command, children }) => {
-//     const [showw, setShoww] = useState(show);
-//     const navigate = useNavigate();
 
-//     const showHideClassName = showw ? "modal display-block" : "modal display-none";
+function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
 
-//     const style = {
-//         // marginRight: 100
-//     }
+    const navigate = useNavigate();
+    const Links = [
+        {name: 'Services', link: '', 
+            dropdown: [
+                {link: '/services/mobile', name: 'Mobile App'},
+                {link: '/services/web', name: 'Web App'},
+                {link: '/services/blockchain', name: 'Blockchain App'},
+                {link: '/services/gamedev', name: 'Game Development'},
+                {link: '/services/bot', name: 'Bot App'},
+                {link: '/services/pnp', name: 'PnP Microservices'},
+            ]
+        },
+        {name: 'Career', link: ''},
+        {name: 'Contact Us', link: "/contact-us"}
+    ]
+
+    const toggle = () => {
+      setIsOpen(!isOpen);
+    };
     
-//     return (
-//         <>
-//             <div className="navSection-navigation-misc" onClick={() => navigate('/hire-us')} style={style}>
-//             {/* <div className="navSection-navigation-misc" onClick={() => setShoww(true)} style={style}> */}
-//                 <span>Hire Developers</span>
-//             </div>
-//             <div className={showHideClassName} onClick={() => setShoww(false)}>
-//                 <section className="modal-main">
-//                     <div className="modal-main-content">
-//                         <div className="modal-main-content-close">
-//                             <span onClick={() => setShoww(false)}>Close</span>
-//                         </div>
-//                         <div className="modal-main-content-form">
-//                             {/* <p>This is the content of the modal</p> */}
-//                             <h1>How may we help you ?</h1>
-//                             <div className="modal-main-content-form-description">
-//                                 <hr />
-//                                 <p>All fields are required</p>
-//                                 <hr />
-//                             </div>
-//                             <div className="modal-main-content-form-container">
-//                                 <div>
-//                                     <p>Email</p>
-//                                     <input type="email" className="form-input" placeholder="sample@user.com" />
-//                                 </div>
-//                                 <div>
-//                                     <p>Subject</p>
-//                                     <input type="text" className="form-input" placeholder="HOW TO JOIN THE TEAM" />
-//                                 </div>
-//                                 <div>
-//                                     <p>Enter Message</p>
-//                                     <textarea className="form-textarea" />
-//                                 </div>
-                                
-//                                 <button className="btn btn-solid" style={{width: '100%'}}>
-//                                     Hire Us
-//                                 </button>
-//                             </div>
-//                         </div>
-                       
-//                     </div>
-//                 </section>
-//             </div>
-//         </>
-//     );
-// };
+    const dropdown = (e = 'open') => {
+        if(e == 'open'){
+            setShowDropdown(true)
+        }else if(e == 'close'){
+            setShowDropdown(false)
+        }
+    };
 
-export default NavBarComponent;
+    const showChildren = (e, link) => {
+        if (!link.dropdown?.length){
+            navigate(link.link)
+        }else{
+            const dropElements = e.target.nextElementSibling;
+            if(dropElements.classList.contains('hidden')) {
+                dropElements.classList.remove('hidden')
+                dropdown('open');
+            } else {
+                dropElements.classList.add('hidden')
+                dropdown('close');
+            }
+            console.log(dropElements);
+        }
+    }
+  
+    return (
+      <nav className="shadow-md w-full fixed top-0 left-0">
+        <div className="nav-reduced">
+            <div className="md:flex bg-white py-4 items-center justify-between px-8 md:px-10 lg:px-18 xl:px-18 w-full">
+                <div className="md:flex bg-white py-4 items-center" onClick={() => navigate('/')}>
+                    <div className="flex bg-white py-4 items-center font-bold text-2xl cursor-pointer flex font-[Poppins] text-indigo-900">
+                        <span href="#" className="text-white font-bold ">
+                            <svg width="26" height="38" viewBox="0 0 26 38" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                <path d="M3.62791 0C1.62441 0 0 1.62852 0 3.63742V34.3626C0 36.3715 1.62441 38 3.62791 38C5.6314 38 7.25582 36.3715 7.25582 34.3626V24.8832C7.25582 23.5439 8.33875 22.4583 9.67442 22.4583H15.1163C16.4519 22.4583 17.5349 23.5439 17.5349 24.8832V34.3626C17.5349 36.3715 19.1593 38 21.1628 38C23.1663 38 24.7907 36.3715 24.7907 34.3626V20.0334C24.7907 17.3549 22.6251 15.1835 19.9535 15.1835H9.67442C8.33875 15.1835 7.25582 14.0978 7.25582 12.7585V3.63742C7.25582 1.62852 5.6314 0 3.62791 0Z" fill="url(#paint0_linear_815_250)"/>
+                                <path d="M20.5833 10.8854C23.255 10.8854 26 7.52837 26 4.84989C26 2.17141 23.8344 0 21.1628 0C18.4912 0 15.1667 2.17141 15.1667 4.84989C15.1667 7.52837 17.9117 10.8854 20.5833 10.8854Z" fill="url(#paint1_linear_815_250)"/>
+                                <defs>
+                                    <linearGradient id="paint0_linear_815_250" x1="19.5" y1="4.63415" x2="8.89873" y2="36.8331" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#152A47"/>
+                                        <stop offset="1" stop-color="#032555"/>
+                                    </linearGradient>
+                                    <linearGradient id="paint1_linear_815_250" x1="19.5" y1="4.63415" x2="8.89873" y2="36.8331" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#152A47"/>
+                                        <stop offset="1" stop-color="#032555"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span>
+                            <div className="navSection-navigation-logo-brand-name">HackCity</div>
+                            <div className="navSection-navigation-logo-brand-name flex md:hidden transition-all duration-500 ease-in">Tech. Inc.</div>
+                        </span>
+                    </div>
+                </div>
+                <span className="text-3xl text-indigo-900 absolute right-8 top-16 cursor-pointer md:hidden" onClick={toggle}>
+                    <ion-icon name={isOpen? "close" : "menu-outline"}></ion-icon>
+                </span>
+                <ul className={`${isOpen ? 'top-32 opacity-100' : 'top-[-400px] md:opacity-100 opacity-0'} sm:block md:flex md:items-center font-[Poppins] md:py-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in font-medium`}>
+                    {
+                        Links.map(item => (
+                            <li key={item.name} className="ml-10 text-xl md:my-0 my-7 group  hover:border-b md:border-orange-600">
+                                <span className="text-indigo-900 hover:text-indigo-500 md:cursor-pointer" onClick={e => navigate(item.link)}>{item.name}</span>
+                                    {
+                                        item.dropdown?.length?
+                                            <ul className={`items-center hidden font-[Poppins] item-center md:absolute top-50 bg-white px-1.5 md:px-5 md:pb-5 md:border-l-rose-600 md:border-b-rose-600 md:z-[1] md:border-b md:border-l border-orange group-hover:block hover:block duration-500 group:transition-all duration-500`}>
+                                                {item.dropdown.map(sub => <li key={sub.name} className="my-3 md:cursor-pointer text-indigo-900 hover:text-rose-600 duration-200 "  onClick={e => navigate(sub.link)}> {sub.name} </li>)}
+                                            </ul>: null
+                                    }
+                            </li>
+                        ))
+                    }
+                    <div className="bg-[#EB5757] text-white font-['Poppins] ml-10 w-fit py-2 px-10 rounded-full sm:ml-8 md:ml-32 hover:bg-white hover:text-[#EB5757] duration-500 md:cursor-pointer" onClick={() => navigate('/hire-us')}>
+                        <span>Hire Developers</span>
+                    </div>
+                </ul>
+            </div>
+        </div>
+      </nav>
+    );
+  }
+  
+
+export default Navbar;
