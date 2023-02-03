@@ -16,7 +16,11 @@
     border-radius: 0px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    // grid-template-columns: 1fr min-content;
+    gap: 10px;
+    // padding: 0 13%;
+
     cursor: pointer;
     box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
 
@@ -27,7 +31,34 @@
     }
 
     svg {
-        margin-left: 10px;
+        margin-right: 30px;
+    }
+}
+
+.btn-alt {
+    height: 3.875rem;
+    width: 13rem;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    // grid-template-columns: min-content 1fr;
+    gap: 10px;
+    // padding: 0 13%;
+
+    cursor: pointer;
+    box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+
+    &-solid {
+        background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
+        box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
+        color: aliceblue;
+    }
+
+    svg {
+        margin-left: 30px;
     }
 }
 

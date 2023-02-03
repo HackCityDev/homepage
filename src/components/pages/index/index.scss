@@ -683,13 +683,13 @@ $breakpoint-desktop: 1024px;
 }
 
   
-  button {
+button {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 14px;
-  }
+}
 
 @media all and (min-width: 1px) and (max-width: $breakpoint-mobile)  {
     .sections {
@@ -712,7 +712,7 @@ $breakpoint-desktop: 1024px;
                  font-family: 'Poppins';
                 font-style: normal;
                 font-weight: 600;
-                font-size: 24px;
+                font-size: 16px;
                 line-height: 12px;
                 /* identical to box height, or 50% */
     
@@ -729,7 +729,7 @@ $breakpoint-desktop: 1024px;
                 justify-content: space-between;
                 width: 100%;
                 // padding: 100px 0 !important;
-                padding: 15.5% 2% 0% 2% !important;
+                padding: 15.5% 5% 0% 5% !important;
     
                 &-left {
                     width: 100%;
@@ -785,7 +785,7 @@ $breakpoint-desktop: 1024px;
 
                         button {
                             max-width: 100%;
-                            width: 80%;
+                            width: 100%;
                             font-size: 14px;
                             line-height: 14px;
                             margin: 0 auto;
@@ -827,7 +827,7 @@ $breakpoint-desktop: 1024px;
                 flex-direction: column;
                 grid-template-columns: 1fr fit-content;
                 gap: 20px;
-                padding: 2% 2% 30px 2%;
+                padding: 2% 5% 30px 5%;
     
                 &-upper {
                     display: flex;
@@ -1011,7 +1011,7 @@ $breakpoint-desktop: 1024px;
                 justify-content: center;
                 align-items: center;
                 // grid-template-columns: fit-content 1fr;
-                padding: 2% 2% 30px 2%;
+                padding: 2% 5% 30px 5%;
     
     
                 h3 {
@@ -1125,7 +1125,7 @@ $breakpoint-desktop: 1024px;
                 align-items: center;
                 justify-content: space-between;
                 // padding: 0 20px;
-                padding: 2% 2% 30px 2%;
+                padding: 2% 5% 30px 5%;
 
                 &-left {
                     display: grid;
@@ -1183,7 +1183,7 @@ $breakpoint-desktop: 1024px;
                 display: grid;
                 gap: 33px;
                 // padding: 0 20px;
-                padding: 2% 2% 30px 2%;
+                padding: 2% 5% 30px 5%;
     
                 &-description {
                     width: 100%;

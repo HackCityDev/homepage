@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HireUsHeader } from "./hire-us-header";
 import { OtherBrands } from "../index/index";
+import MiniHeader, { MiniHeaderN } from "../../helpers/hire-us-header-mobile";
 
 const HireUs6 = (props) => {
   const navigate = useNavigate();
@@ -12,60 +13,9 @@ const HireUs6 = (props) => {
     <>
       <div className="hire-us">
         <div className="hire-us-container">
-          <div className="hire-us-container-left-noarrow">
-            {/* <span
-              className="hire-us-container-left-arrow"
-              onClick={() => navigate("/hire-us/5")}
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.1855 9L1.9995 9"
-                  stroke="url(#paint0_linear_857_1770)"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M5 13L1 8.5L5 4"
-                  stroke="url(#paint1_linear_857_1770)"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_857_1770"
-                    x1="5.29601"
-                    y1="8.87805"
-                    x2="5.31205"
-                    y2="7.93913"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#152A47" />
-                    <stop offset="1" stop-color="#032555" />
-                  </linearGradient>
-                  <linearGradient
-                    id="paint1_linear_857_1770"
-                    x1="2"
-                    y1="11.9024"
-                    x2="5.40865"
-                    y2="5.1774"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#152A47" />
-                    <stop offset="1" stop-color="#032555" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </span> */}
+          <div className="hire-us-container-left-scm">
             <svg
-              className="hire-us-container-left-illustration" 
+              className="hire-us-container-left-scm-illustration" 
               width="658"
               height="997"
               viewBox="0 0 658 997"
@@ -466,11 +416,8 @@ const HireUs6 = (props) => {
                 </linearGradient>
               </defs>
             </svg>
-            <div class="hire-us-container-left-text">
-                <h1>Hire Us</h1>
-                <span>Completed</span>
-            </div>
           </div>
+          <MiniHeaderN step="Completed" uri='' data={{}} />
           <div className="hire-us-container-right-new">
             <HireUsHeader />
             <div className="hire-us-container-right-new-progress">
@@ -502,7 +449,7 @@ const HireUs6 = (props) => {
                 within 24hours
               </div>
               <div className="hire-us-container-right-new-form-submit-center">
-                <button className="btn btn-solid" onClick={() => {console.log(state)}}>
+                <button className="btn-alt btn-solid" style={{width: 'max-content !important'}} onClick={() => {console.log(state)}}>
                 {/* <button className="btn btn-solid" onClick={() => {console.log(data); navigate("/")}}> */}
                   <span>Back to Home Page</span>
                 </button>

@@ -13,6 +13,7 @@ $breakpoint-desktop: 1024px;
 .nav-reduced {
   max-width: 1440px !important;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .navSection {

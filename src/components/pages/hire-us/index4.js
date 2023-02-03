@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HireUsHeader } from "./hire-us-header";
 import { OtherBrands } from "../index";
+import MiniHeader from "../../helpers/hire-us-header-mobile";
 
 const HireUs4 = (props) => {
   const { state } = useLocation();
@@ -17,9 +18,9 @@ const HireUs4 = (props) => {
     <>
       <div className="hire-us">
         <div className="hire-us-container">
-          <div className="hire-us-container-left">
+          <div className="hire-us-container-left-scm">
             <span
-              className="hire-us-container-left-arrow"
+              className="hire-us-container-left-scm-arrow"
               onClick={() => navigate("/hire-us/3", {state: state})}
             >
               <svg
@@ -70,7 +71,7 @@ const HireUs4 = (props) => {
               </svg>
             </span>
             <svg
-              className="hire-us-container-left-illustration" 
+              className="hire-us-container-left-scm-illustration" 
               width="574"
               height="997"
               viewBox="0 0 574 997"
@@ -1962,11 +1963,8 @@ const HireUs4 = (props) => {
                 </linearGradient>
               </defs>
             </svg>
-            <div class="hire-us-container-left-text">
-                <h1>Hire Us</h1>
-                <span>Step Four</span>
-            </div>
           </div>
+          <MiniHeader step={'Step Four'} uri={"/hire-us/3"} data = {state}/>
           <div className="hire-us-container-right-new">
             <HireUsHeader />
             <div className="hire-us-container-right-new-progress">
@@ -2058,7 +2056,7 @@ const HireUs4 = (props) => {
               </div>
             </div>
             <div className="hire-us-container-right-new-form-submit space-between">
-              <button className="btn" onClick={() => navigate("/hire-us/3", {state: state})}>
+              <button className="btn-alt" onClick={() => navigate("/hire-us/3", {state: state})}>
                 <svg
                   width="16"
                   height="16"
