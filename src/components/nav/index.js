@@ -120,7 +120,7 @@ function Navbar() {
                 {link: '/services/pnp', name: 'PnP Microservices'},
             ]
         },
-        {name: 'Career', link: ''},
+        {name: 'Career', link: '/join-us'},
         {name: 'Contact Us', link: "/contact-us"}
     ]
 
@@ -187,12 +187,12 @@ function Navbar() {
                 <ul className={`${isOpen ? 'top-18 opacity-100' : 'top-[-400px] md:opacity-100 opacity-0'} sm:block md:flex md:items-center font-[Poppins] md:py-0 pb-12 absolute md:static bg-white md:z-auto z-[2] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ease-out font-medium`}>
                     {
                         Links.map(item => (
-                            <li key={item.name} className="ml-10 text-xl md:my-0 my-7 group  hover:border-b md:border-orange-600">
+                            <li key={item.name} className="ml-10 text-xl md:my-0 my-7 group hover:border-b md:border-orange-600" onMouseLeave={() => setIsOpen(false)}>
                                 <span className="text-indigo-900 hover:text-indigo-500 md:cursor-pointer" onClick={e => showChildren(e, item)}>{item.name}</span>
                                     {
                                         item.dropdown?.length?
-                                            <ul className={`items-center hidden font-[Poppins] item-center md:absolute top-50 bg-white px-1.5 md:px-5 md:pb-5 md:border-l-rose-600 md:border-b-rose-600 md:z-[1] md:border-b md:border-l border-orange group-hover:block hover:block duration-500 group:transition-all duration-500`}>
-                                                {item.dropdown.map(sub => <li key={sub.name} className="my-3 md:cursor-pointer text-indigo-900 hover:text-rose-600 duration-200 "  onClick={e => navigate(sub.link)}> {sub.name} </li>)}
+                                            <ul className={`items-center hidden font-[Poppins] item-center md:absolute top-50 bg-white px-1.5 md:px-5 md:pb-5 md:border-l-rose-600 md:border-b-rose-600 md:z-[1] md:border-b md:border-l border-orange ${isOpen? 'group:block' : null} group-hover:block hover:block duration-500 group:transition-all duration-500`}>
+                                                {item.dropdown.map(sub => <li key={sub.name} className="my-3 md:cursor-pointer text-indigo-900 hover:text-rose-600 duration-200 "  onClick={e => {setIsOpen(false); navigate(sub.link) }}> {sub.name} </li>)}
                                             </ul>: null
                                     }
                             </li>

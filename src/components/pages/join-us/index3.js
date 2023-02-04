@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 
 export const DefaultContent = props => {
     const [value, setValue] = useState('')
+    const [showMore, setShowMore] = useState(false)
+
     const options = useMemo (() => countryList().getData(), []);
     const navigate = useNavigate();
 
@@ -22,11 +24,17 @@ export const DefaultContent = props => {
                 <p>You can select multiple skills</p>
                 <div className="join-us-container-tracks-list">
                     {
-                        Object.keys(Icons).map(key => {
+                        Object.keys(Icons).map((key, index) => {
                             const Component = Icons[key];
-                            return (<Component action={e => console.log(e)} />)
+                            return (<Component action={e => console.log(e)} value={key.toLowerCase()} classNam={(index >= Object.keys(Icons).length / 2)? showMore? 'show' : 'hide' : 'show'}/>)
                         })
                     }
+                    
+                </div>
+                <div className="join-us-container-tracks-limit" onClick={() => setShowMore(!showMore)}>
+                    {/* <span> */}
+                        View {showMore ? 'less': 'more'} skills 
+                    {/* </span> */}
                 </div>
             </div>
             <div className="join-us-container-form">
@@ -74,7 +82,7 @@ export const DefaultContent = props => {
                         </div>
                         <div className="form-group-upload-submit">
                             <button type="submit" className="btn btn-solid" >Submit your details</button>
-                            <span onClick={() => navigate('/join-us/sign-in')} style={{color: 'red', margin: 20, cursor: 'pointer'}}>Alternatively</span>
+                            {/* <span onClick={() => navigate('/join-us/sign-in')} style={{color: 'red', margin: 20, cursor: 'pointer'}}>Alternatively</span> */}
                         </div>
                     </div>
                 {/* </div> */}

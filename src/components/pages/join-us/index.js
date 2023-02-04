@@ -15,7 +15,7 @@ const JoinUs = props => {
                         <p>Create Your Personal account profile</p>
                     </div>
                     <Outlet />
-                    <TeamStrengthTeam />
+                    {/* <TeamStrengthTeam /> */}
                 </div>
             </section>
             <OtherBrands />
