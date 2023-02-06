@@ -1014,6 +1014,7 @@ const HireUs5 = (props) => {
               <button
                 className="btn btn-solid"
                 onClick={() => navigate("/hire-us/6", {state: data2})}
+                disabled={!(Object.keys(data2).length > 8)}
               >
                 <span>Next</span>
                 <svg

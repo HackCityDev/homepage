@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { HireUsHeader } from "./hire-us-header";
 import { OtherBrands } from "../index";
 import MiniHeader from "../../helpers/hire-us-header-mobile";
@@ -7,6 +7,7 @@ import left from './imgs/left1.png';
 
 const HireUs1 = props => {
     const navigate = useNavigate()
+    const { state } = useLocation();
 
     const [data, setData] = useState({});
 
@@ -296,7 +297,7 @@ const HireUs1 = props => {
                             <span className="hidden md:flex">
                                 &nbsp;
                             </span>
-                            <button className="btn btn-solid" onClick={() =>navigate('/hire-us/2', { state: data })}>
+                            <button className="btn btn-solid" onClick={() =>navigate('/hire-us/2', { state: data })} disabled={!Object.keys(data).length}>
                                 <span>Next</span>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.814453 7L14.0005 7" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

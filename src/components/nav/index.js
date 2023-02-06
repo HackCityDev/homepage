@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './index.scss';
 
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { BsChevronDown } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";
 
@@ -140,17 +140,18 @@ function Navbar() {
         if (!link.dropdown?.length){
             navigate(link.link)
             setIsOpen(false);
-        }else{
-            const dropElements = e.target.nextElementSibling;
-            if(dropElements.classList.contains('hidden')) {
-                dropElements.classList.remove('hidden')
-                dropdown('open');
-            } else {
-                dropElements.classList.add('hidden')
-                dropdown('close');
-            }
-            console.log(dropElements);
         }
+        // else{
+        //     const dropElements = e.target.nextElementSibling;
+        //     if(dropElements.classList.contains('hidden')) {
+        //         dropElements.classList.remove('hidden')
+        //         dropdown('open');
+        //     } else {
+        //         dropElements.classList.add('hidden')
+        //         dropdown('close');
+        //     }
+        //     console.log(dropElements);
+        // }
     }
   
     return (
@@ -187,18 +188,18 @@ function Navbar() {
                 <ul className={`${isOpen ? 'top-18 opacity-100' : 'top-[-400px] md:opacity-100 opacity-0'} sm:block md:flex md:items-center font-[Poppins] md:py-0 pb-12 absolute md:static bg-white md:z-auto z-[2] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ease-out font-medium`}>
                     {
                         Links.map(item => (
-                            <li key={item.name} className="ml-10 text-xl md:my-0 my-7 group hover:border-b md:border-orange-600" onMouseLeave={() => setIsOpen(false)}>
-                                <span className="text-indigo-900 hover:text-indigo-500 md:cursor-pointer" onClick={e => showChildren(e, item)}>{item.name}</span>
+                            <li key={item.name} className="ml-10 text-xl md:my-0 my-7 group hover:border-b md:border-orange-600" onMouseLeave={() => setIsOpen(false)} onMouseEnter={() => setIsOpen(true)}>
+                                <span className="text-indigo-900 hover:text-indigo-500 md:cursor-pointer flex items-center justify-center" onClick={e => showChildren(e, item)}><span>{item.name}</span> {item.dropdown?.length? isOpen?  <FiChevronUp />: <FiChevronDown /> : null}</span>
                                     {
                                         item.dropdown?.length?
-                                            <ul className={`items-center hidden font-[Poppins] item-center md:absolute top-50 bg-white px-1.5 md:px-5 md:pb-5 md:border-l-rose-600 md:border-b-rose-600 md:z-[1] md:border-b md:border-l border-orange ${isOpen? 'group:block' : null} group-hover:block hover:block duration-500 group:transition-all duration-500`}>
+                                            <ul className={`items-center hidden font-[Poppins] item-center md:absolute top-50 bg-white px-1.5 md:px-5 md:pb-5 md:border-l-rose-600 md:border-b-rose-600 md:z-[1] md:border-b md:border-l border-orange  group:block ${isOpen? null : 'group:hidden'} group-hover:block hover:block duration-500 group:transition-all duration-500`}>
                                                 {item.dropdown.map(sub => <li key={sub.name} className="my-3 md:cursor-pointer text-indigo-900 hover:text-rose-600 duration-200 "  onClick={e => {setIsOpen(false); navigate(sub.link) }}> {sub.name} </li>)}
                                             </ul>: null
                                     }
                             </li>
                         ))
                     }
-                    <div className="bg-[#EB5757] text-white font-['Poppins] ml-10 w-fit py-2 px-10 rounded-full sm:ml-8 md:ml-32 hover:bg-white hover:text-[#EB5757] duration-500 md:cursor-pointer" onClick={() => {navigate('/hire-us'); setIsOpen(false)}}>
+                    <div className="bg-[#EB5757] text-white font-['Poppins] ml-10 w-fit py-2 px-10 rounded-full sm:ml-8 md:ml-32 hover:bg-white hover:text-[#EB5757] duration-500 md:cursor-pointer" onClick={() => {navigate('/hire-us', {state: {}}); setIsOpen(false)}}>
                         <span>Hire Developers</span>
                     </div>
                 </ul>

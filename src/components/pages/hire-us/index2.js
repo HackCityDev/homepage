@@ -11,7 +11,7 @@ const HireUs2 = props => {
     // const [data2, setData] = useState(data)
     
     useEffect(() => {
-        console.log(data2)
+        console.log(! (Object.keys(data2).length > 1))
     })
     
     return (
@@ -387,7 +387,7 @@ const HireUs2 = props => {
                                 </svg>
                                 <span>Previous</span>
                             </button>
-                            <button className="btn btn-solid" onClick={() => navigate('/hire-us/3', {state: data2})}>
+                            <button className="btn btn-solid" onClick={() => navigate('/hire-us/3', {state: data2})} disabled={!(Object.keys(data2).length > 1)}>
                                 <span>Next</span>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.814453 7L14.0005 7" stroke="#C0C0C0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

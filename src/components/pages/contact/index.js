@@ -5,9 +5,40 @@ import { useNavigate } from "react-router-dom";
 import { OtherBrands } from "../index";
 import "./index.scss"
 
+import * as EmailValidator from 'email-validator';
+
 
 const ContactUs = props => {
     const navigate = useNavigate();
+
+    const fields = ['email', 'subject', 'message'];
+
+    const [data, setData] = useState({});
+    const [errors, setErrors] = useState({})
+    const [loading, setLoading] = useState(false);
+
+    const submit = async() => {
+        setLoading(!loading)
+        setErrors({})
+        for (const field of fields) {
+            if (!Object.keys(data).includes(field) || data[field] == ''){
+                setErrors(d => ({...d, [field]: true}))
+            }else {
+                document.querySelector('#' + field).classList.remove('color-red')
+            }
+
+            if(field === 'email' && !EmailValidator.validate(data[field])){
+                setErrors(d => ({...d, [field]: true}))
+            }
+        }
+
+        if (Object.keys(errors).length){
+            console.table(errors);
+        }
+        
+        setLoading(!loading)
+    }
+
     return (
         <>
             <div className="contact-us-header">
@@ -65,19 +96,31 @@ const ContactUs = props => {
                                 <hr />
                             </div>
                             <div className="contact-us-container-right-form-item">
-                                <span className="contact-us-container-right-form-item-label">Email</span>
-                                <input type={'text'} placeholder="eg. HackCity Tech Inc." />
+                                <span className={`contact-us-container-right-form-item-label`}>Email</span>
+                                <input id="email" type={'text'} placeholder="eg. HackCity Tech Inc." className={errors.email? 'color-red' : null} value={data?.email} onChange={e => setData(d => ({...d, email: e.target.value}))}/>
+                                {
+                                    errors.email?
+                                    <span style={{color:'red', fontWeight: 'bold', fontSize: 16}}>This Field Is Compulsory</span>: null
+                                }
                             </div>
                             <div className="contact-us-container-right-form-item">
-                                <span className="contact-us-container-right-form-item-label">Subject</span>
-                                <input type={'text'} placeholder="eg. Program Director" />
+                                <span className={`contact-us-container-right-form-item-label`}>Subject</span>
+                                <input id="subject" type={'text'} placeholder="eg. Program Director" className={errors.subject? 'color-red' : null} value={data?.subject} onChange={e => setData(d => ({...d, subject: e.target.value}))}/>
+                                {
+                                    errors.subject?
+                                    <span style={{color:'red', fontWeight: 'bold', fontSize: 16}}>This Field Is Compulsory</span>: null
+                                }
                             </div>
                             <div className="contact-us-container-right-form-item">
                                 <span className="contact-us-container-right-form-item-label">Enter Message</span>
-                                <textarea className="" rows={6}/>
+                                <textarea id="message" className={errors.message? 'color-red' : null} rows={6} value={data?.message} onChange={e => setData(d => ({...d, message: e.target.value}))}/>
+                                {
+                                    errors.message?
+                                    <span style={{color:'red', fontWeight: 'bold', fontSize: 16}}>This Field Is Compulsory</span>: null
+                                }
                             </div>
                             <div className="contact-us-container-right-form-item">
-                                <button className="btn btn-solid contact-us-container-right-form-item-button" onClick={() =>navigate('/hire-us/2')}>
+                                <button className="btn btn-solid contact-us-container-right-form-item-button" disabled={loading} onClick={submit}>
                                     <span>Send Message</span>
                                 </button>
                             </div>

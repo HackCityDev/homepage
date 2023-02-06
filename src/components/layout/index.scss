@@ -62,6 +62,19 @@
     }
 }
 
+button:disabled {
+    color: white !important;
+    background-color: grey !important;
+    cursor: not-allowed !important;
+}
+
+.color {
+
+    &-red {
+        color: red;
+    }
+}
+
 .small {
     font-family: 'Poppins';
     font-style: normal;
