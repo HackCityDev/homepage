@@ -135,6 +135,9 @@ $breakpoint-desktop: 1024px;
 
                 &-right {
                     // width: 52%;
+                    gap: 16px;
+                    display: flex;
+                    flex-direction: column;
 
                     &-title {
                         font-family: 'Poppins';
@@ -151,8 +154,8 @@ $breakpoint-desktop: 1024px;
                         font-family: 'Poppins';
                         font-style: normal;
                         font-weight: 400;
-                        font-size: 23px;
-                        line-height: 34px;
+                        font-size: 20px;
+                        line-height: 30px;
                         color: #656464;
                     }
                     

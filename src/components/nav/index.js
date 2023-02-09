@@ -121,6 +121,7 @@ function Navbar() {
             ]
         },
         {name: 'Career', link: '/join-us'},
+        {name: 'News & Events', link: ""},
         {name: 'Contact Us', link: "/contact-us"}
     ]
 
@@ -157,7 +158,8 @@ function Navbar() {
     return (
       <nav className="shadow-md w-full fixed top-0 left-0">
         <div className="nav-reduced">
-            <div className="md:flex bg-white py-2 items-center justify-between px-8 md:px-10 lg:px-18 xl:px-18 w-full">
+            {/* <div className="md:flex bg-white py-2 items-center justify-between px-8 md:px-10 lg:px-18 xl:px-18 w-full"> */}
+            <div className="md:flex bg-white py-2 items-center justify-between  w-full">
                 <div className="md:flex bg-white py-2 items-center" onClick={() => navigate('/')}>
                     <div className="flex bg-white py-2 items-center font-bold text-2xl cursor-pointer flex font-[Poppins] text-indigo-900">
                         <span href="#" className="text-white font-bold ">
@@ -185,24 +187,27 @@ function Navbar() {
                 <span className="text-3xl text-indigo-900 absolute right-8 top-8 cursor-pointer md:hidden" onClick={toggle}>
                     <ion-icon name={isOpen? "close" : "menu-outline"}></ion-icon>
                 </span>
-                <ul className={`${isOpen ? 'top-18 opacity-100' : 'top-[-400px] md:opacity-100 opacity-0'} sm:block md:flex md:items-center font-[Poppins] md:py-0 pb-12 absolute md:static bg-white md:z-auto z-[2] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ease-out font-medium`}>
+                <ul className={`${isOpen ? 'top-18 opacity-100' : 'top-[-400px] md:opacity-100 opacity-0'} sm:block md:flex md:items-center font-[Poppins] md:py-0 pb-12 absolute md:static bg-white md:z-auto z-[2] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ease-out font-medium text-[#656464]`}>
                     {
                         Links.map(item => (
                             <li key={item.name} className="ml-10 text-xl md:my-0 my-7 group hover:border-b md:border-orange-600" onMouseLeave={() => setIsOpen(false)} onMouseEnter={() => setIsOpen(true)}>
-                                <span className="text-indigo-900 hover:text-indigo-500 md:cursor-pointer flex items-center justify-center" onClick={e => showChildren(e, item)}><span>{item.name}</span> {item.dropdown?.length? isOpen?  <FiChevronUp />: <FiChevronDown /> : null}</span>
+                                <span className="text-[#656464] hover:text-indigo-500 md:cursor-pointer flex items-center justify-start gap-1" onClick={e => showChildren(e, item)}><span>{item.name}</span> {item.dropdown?.length? isOpen?  <FiChevronUp />: <FiChevronDown /> : null}</span>
                                     {
                                         item.dropdown?.length?
                                             <ul className={`items-center hidden font-[Poppins] item-center md:absolute top-50 bg-white px-1.5 md:px-5 md:pb-5 md:border-l-rose-600 md:border-b-rose-600 md:z-[1] md:border-b md:border-l border-orange  group:block ${isOpen? null : 'group:hidden'} group-hover:block hover:block duration-500 group:transition-all duration-500`}>
-                                                {item.dropdown.map(sub => <li key={sub.name} className="my-3 md:cursor-pointer text-indigo-900 hover:text-rose-600 duration-200 "  onClick={e => {setIsOpen(false); navigate(sub.link) }}> {sub.name} </li>)}
+                                                {item.dropdown.map(sub => <li key={sub.name} className="my-3 md:cursor-pointer text-[#656464] hover:text-rose-600 duration-200 "  onClick={e => {setIsOpen(false); navigate(sub.link) }}> {sub.name} </li>)}
                                             </ul>: null
                                     }
                             </li>
                         ))
                     }
-                    <div className="bg-[#EB5757] text-white font-['Poppins] ml-10 w-fit py-2 px-10 rounded-full sm:ml-8 md:ml-32 hover:bg-white hover:text-[#EB5757] duration-500 md:cursor-pointer" onClick={() => {navigate('/hire-us', {state: {}}); setIsOpen(false)}}>
+                    <div className="md:hidden bg-[#EB5757] text-white font-['Poppins] ml-10 w-fit py-2 px-10 rounded-full sm:ml-8 md:ml-32 hover:bg-white hover:text-[#EB5757] duration-500 md:cursor-pointer" onClick={() => {navigate('/hire-us', {state: {}}); setIsOpen(false)}}>
                         <span>Hire Developers</span>
                     </div>
                 </ul>
+                <div className="hidden md:flex bg-[#EB5757] text-white font-['Poppins] ml-10 w-fit py-2 px-10 rounded-full sm:ml-8 md:ml-32 hover:bg-white hover:text-[#EB5757] duration-500 md:cursor-pointer" onClick={() => {navigate('/hire-us', {state: {}}); setIsOpen(false)}}>
+                    <span>Hire Developers</span>
+                </div>
             </div>
         </div>
       </nav>
