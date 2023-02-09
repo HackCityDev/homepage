@@ -194,7 +194,7 @@ function Navbar() {
                                 <span className="text-[#656464] hover:text-indigo-500 md:cursor-pointer flex items-center justify-start gap-1" onClick={e => showChildren(e, item)}><span>{item.name}</span> {item.dropdown?.length? isOpen?  <FiChevronUp />: <FiChevronDown /> : null}</span>
                                     {
                                         item.dropdown?.length?
-                                            <ul className={`items-center hidden font-[Poppins] item-center md:absolute top-50 bg-white px-1.5 md:px-5 md:pb-5 md:border-l-rose-600 md:border-b-rose-600 md:z-[1] md:border-b md:border-l border-orange  group:block ${isOpen? null : 'group:hidden'} group-hover:block hover:block duration-500 group:transition-all duration-500`}>
+                                            <ul className={`items-center hidden font-[Poppins] item-center md:absolute top-50 bg-white px-1.5 md:px-5 md:pb-5 md:border-l-rose-600 md:z-[1] md:shadow md:rounded-b-3xl  group:block ${isOpen? null : 'group:hidden'} group-hover:block hover:block duration-500 group:transition-all duration-500`}>
                                                 {item.dropdown.map(sub => <li key={sub.name} className="my-3 md:cursor-pointer text-[#656464] hover:text-rose-600 duration-200 "  onClick={e => {setIsOpen(false); navigate(sub.link) }}> {sub.name} </li>)}
                                             </ul>: null
                                     }
