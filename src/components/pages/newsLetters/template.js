@@ -141,6 +141,7 @@ export const NewsDefaultContent = props => {
 export const NewsContentReader = props => {
     const { newsId } = useParams();
     const [showModal, setShowModal] = useState(false);
+    const navigate = useNavigate();
 
     console.log(newsId);
     const data = {
@@ -208,7 +209,7 @@ export const NewsContentReader = props => {
             </div>
             <div className="news-container">
                 <div className="news-container-body">
-                    <span className="news-container-body-back">
+                    <span className="news-container-body-back" onClick={() => navigate('/news')}>
                         <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21.7077 11.4998H1.29102M1.29102 11.4998L11.4993 21.7082M1.29102 11.4998L11.4993 1.2915" stroke="#344054" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
