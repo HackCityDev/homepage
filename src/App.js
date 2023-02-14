@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import Layout from './components/layout';
 import IndexComponent from './components/pages/index';
 import JoinUs from './components/pages/join-us';
@@ -17,6 +17,8 @@ import HireUs6 from './components/pages/hire-us/index6';
 import ContactUs from './components/pages/contact';
 import Services from './components/pages/services';
 import { BlockChainDevelopment, MobileDevelopment, WebDevelopment } from './components/pages/services/template';
+import News from './components/pages/newsLetters';
+import { NewsContentReader, NewsDefaultContent } from './components/pages/newsLetters/template';
 
 function App() {
   return (
@@ -26,8 +28,8 @@ function App() {
           <Route index element={<IndexComponent />} />
           <Route path='/join-us' element={<JoinUs />} >
             <Route index element={<DefaultContent />} />
-            <Route path='/join-us/sign-in' element={<MemberLogin />} />
-            <Route path='/join-us/sign-up' element={<MemberSignUp />} />
+            {/* <Route path='/join-us/sign-in' element={<MemberLogin />} /> */}
+            {/* <Route path='/join-us/sign-up' element={<MemberSignUp />} /> */}
           </Route>
           <Route path='/hire-us' element={<HireUs />} >
             <Route index element={<HireUs1 />} />
@@ -44,9 +46,16 @@ function App() {
             <Route path='/services/web' element={<WebDevelopment />} />
             <Route path='/services/blockchain' element={<BlockChainDevelopment />} />
             <Route path='/services/mobile' element={<MobileDevelopment />} />
+            <Route path='/services/' element={<Navigate to="/" replace />} />
+            <Route path='/services/*' element={<Navigate to="/" replace />} />
+          </Route>
+          <Route path='/news' element={<News />}>
+            <Route path='/news/' element={<NewsDefaultContent />} />
+            <Route path='/news/:newsId' element={<NewsContentReader />} />
+            <Route path='/news/*' element={<Navigate to="/" replace />} />
           </Route>
         </Route>
-        <Route path='*' element={<Layout />} />
+        <Route path='*' element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

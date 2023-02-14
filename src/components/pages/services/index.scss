@@ -16,7 +16,7 @@ $breakpoint-desktop: 1024px;
         justify-content: center;
 
         &-content {
-            background-image: url('./headerbg.svg');
+            background-image: url('../headerbg.svg');
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
@@ -191,7 +191,7 @@ $breakpoint-desktop: 1024px;
     
             &-content {
                 box-sizing: border-box;
-                background-image: url('./headerbg.svg');
+                background-image: url('../headerbg.svg');
                 background-repeat: no-repeat;
                 background-size: cover;
                 width: 100%;
@@ -375,7 +375,7 @@ $breakpoint-desktop: 1024px;
     
             &-content {
                 box-sizing: border-box;
-                background-image: url('./headerbg.svg');
+                background-image: url('../headerbg.svg');
                 background-repeat: no-repeat;
                 background-size: cover;
                 width: 100%;

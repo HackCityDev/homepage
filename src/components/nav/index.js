@@ -121,7 +121,7 @@ function Navbar() {
             ]
         },
         {name: 'Career', link: '/join-us'},
-        {name: 'News & Events', link: ""},
+        {name: 'News & Events', link: "/news"},
         {name: 'Contact Us', link: "/contact-us"}
     ]
 
