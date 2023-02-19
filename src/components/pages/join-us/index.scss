@@ -7,7 +7,7 @@ $breakpoint-desktop: 1024px;
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 7.5em;
 
     &-container {
         width: 100%;
@@ -18,9 +18,10 @@ $breakpoint-desktop: 1024px;
         &-text {
             display: flex;
             flex-direction: column;
-            // padding:  ;
             background: #F2F6FD;
             padding: 50px 5% 35px 5% !important;
+            margin: 0;
+            background-image: url('./../headerbg.svg');
             
             h1 {
                 font-family: 'Poppins';
@@ -761,9 +762,9 @@ $breakpoint-desktop: 1024px;
     }
 }
 
-.hide, .show {
-    disp: visible;
-}
+// .hide, .show {
+//     display: visible;
+// }
 
 .team-strength {
     display: flex;
@@ -810,7 +811,7 @@ $breakpoint-desktop: 1024px;
         display: flex;
         width: 100%;
         justify-content: center;
-        margin-top: 80px;
+        // margin-top: 80px;
     
         &-container {
             width: 100%;
@@ -821,7 +822,7 @@ $breakpoint-desktop: 1024px;
             &-text {
                 display: flex;
                 flex-direction: column;
-                padding: 50px 5% 35px 5% !important;
+                // padding: 50px 5% 35px 5% !important;
                 // padding:  ;
                 background: #F2F6FD;
                 
@@ -1480,7 +1481,7 @@ $breakpoint-desktop: 1024px;
         display: flex;
         width: 100%;
         justify-content: center;
-        margin-top: 80px;
+        // margin-top: 80px;
     
         &-container {
             width: 100%;
@@ -1491,7 +1492,7 @@ $breakpoint-desktop: 1024px;
             &-text {
                 display: flex;
                 flex-direction: column;
-                padding: 50px 5% 35px 5% !important;
+                // padding: 50px 5% 35px 5% !important;
                 // padding:  ;
                 background: #F2F6FD;
                 
@@ -2145,7 +2146,7 @@ $breakpoint-desktop: 1024px;
         display: flex;
         width: 100%;
         justify-content: center;
-        margin-top: 80px;
+        // margin-top: 80px;
     
         &-container {
             width: 100%;
@@ -2156,7 +2157,7 @@ $breakpoint-desktop: 1024px;
             &-text {
                 display: flex;
                 flex-direction: column;
-                padding: 50px 5% 35px 5% !important;
+                // padding: 50px 5% 35px 5% !important;
                 // padding:  ;
                 background: #F2F6FD;
                 
@@ -2782,7 +2783,7 @@ $breakpoint-desktop: 1024px;
         display: flex;
         width: 100%;
         justify-content: center;
-        margin-top: 80px;
+        // margin-top: 80px;
     
         &-container {
             width: 100%;
@@ -2793,7 +2794,7 @@ $breakpoint-desktop: 1024px;
             &-text {
                 display: flex;
                 flex-direction: column;
-                padding: 0% 5% 0% 5% !important;
+                // padding: 0% 5% 0% 5% !important;
                 // padding: 50px 5% 35px 5% !important;
                 // padding:  ;
                 background: #F2F6FD;

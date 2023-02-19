@@ -20,6 +20,7 @@
     // grid-template-columns: 1fr min-content;
     gap: 10px;
     // padding: 0 13%;
+    transition: all 0.4s;
 
     cursor: pointer;
     box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
@@ -27,6 +28,10 @@
     &:hover {
         color: aliceblue;
         background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%); 
+
+        svg {
+            color:  aliceblue;
+        }
     }
 
     &-solid {
@@ -36,7 +41,12 @@
 
         &:hover {
             background: aliceblue;
-            color: black;            
+            color: #032555;       
+            border: 1px solid #032555;
+
+            svg {
+                color:  #032555;
+            }
         }
     }
 
@@ -57,6 +67,7 @@
     // grid-template-columns: min-content 1fr;
     gap: 10px;
     // padding: 0 13%;
+    transition: all 0.4s;
 
     cursor: pointer;
     box-shadow: 0px 7px 22px -6px rgba(33, 123, 244, 0.34);
@@ -64,6 +75,10 @@
     &:hover {
         color: aliceblue;
         background: linear-gradient(192.7deg, #152A47 14.55%, #032555 91.2%);
+
+        svg {
+            color:  aliceblue;
+        }
     }
     
 
@@ -74,7 +89,12 @@
 
         &:hover {
             background: aliceblue;
-            color: black   
+            color: #032555;
+            border: 1px solid #032555;
+
+            svg {
+                color:  #032555;
+            }
         }
     }
 
