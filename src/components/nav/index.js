@@ -1,5 +1,5 @@
 import React, { createRef, useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import './index.scss';
 
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
@@ -225,6 +225,11 @@ function Navbar() {
 function Navbar2() {
     const [isOpen, setIsOpen] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        toggle();
+    }, [pathname])
     
     const navigate = useNavigate();
 
@@ -354,7 +359,7 @@ function Navbar2() {
                 <span className='navigation-content-menu' onClick={toggle}>
                     <ion-icon name={showDropdown? "close" : "menu-outline"}></ion-icon>
                 </span>
-                <ul className="navigation-content-navitems" style={{right: showDropdown? '2px' : '-300px'}} onMouseLeave={toggle} >
+                <ul className="navigation-content-navitems" style={{top: showDropdown? '5em' : '-1000%'}} onMouseLeave={toggle} >
                     {
                         Links.map((item, index) => (
                             <li key={item.name} >

@@ -274,8 +274,8 @@ $breakpoint-desktop: 1024px;
       line-height: 14px;
       letter-spacing: 0.01em;
       color: #656464;
-      transition: all .5s linear;
-      opacity: 1;
+      transition: top .5s linear;
+      // opacity: 1;
       // transform: translate(0);
 
       li {
@@ -320,7 +320,7 @@ $breakpoint-desktop: 1024px;
           right: 0;
           background-color: rgba(0, 0, 0, .2);
           z-index: 1001;
-          transition: display .5s ease-in-out;
+          transition: top .1s linear;
           // display: none;
 
           &.show {
