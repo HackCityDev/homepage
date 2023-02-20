@@ -5,6 +5,7 @@
     justify-content: center;
     justify-items: center;
     max-width: 1440px;
+    width: 100vw;
     margin: 0 auto;
 }
 
@@ -143,6 +144,10 @@ button:disabled {
 // input[type="checkbox"] {
 //     clip-path: circle(46% at 50% 50%);
 // }
+
+.hidden {
+    display: none;
+}
 
 
 .vertical {

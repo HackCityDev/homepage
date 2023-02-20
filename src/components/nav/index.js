@@ -354,7 +354,7 @@ function Navbar2() {
                 <span className='navigation-content-menu' onClick={toggle}>
                     <ion-icon name={showDropdown? "close" : "menu-outline"}></ion-icon>
                 </span>
-                <ul className="navigation-content-navitems" style={{right: showDropdown? '0' : '-300px'}} onMouseLeave={toggle} >
+                <ul className="navigation-content-navitems" style={{right: showDropdown? '2px' : '-300px'}} onMouseLeave={toggle} >
                     {
                         Links.map((item, index) => (
                             <li key={item.name} >

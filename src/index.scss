@@ -13,8 +13,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   // font-family: 'Poppins';
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 a {
   text-decoration: none;

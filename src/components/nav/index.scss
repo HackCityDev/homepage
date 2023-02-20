@@ -206,7 +206,7 @@ $breakpoint-desktop: 1024px;
   left: 0;
   height: 7.5em;
   font-family: 'Poppins';
-  box-shadow: 0 5px 10px aliceblue;
+  box-shadow: 0 5px 0px aliceblue;
   z-index: 1000;
   background-color: white;
   // width: 100vw;
@@ -274,8 +274,10 @@ $breakpoint-desktop: 1024px;
       line-height: 14px;
       letter-spacing: 0.01em;
       color: #656464;
-      transition: all .5s ease-in;
-      
+      transition: all .5s linear;
+      opacity: 1;
+      // transform: translate(0);
+
       li {
         width: max-content;
         cursor: pointer;
@@ -331,10 +333,11 @@ $breakpoint-desktop: 1024px;
         }
 
         ul {
+          list-style: none;
           position:absolute;
           background-color: white;
           z-index: 10002;
-          padding: 7px 8px;
+          padding: 7px 20px 50px 20px;
           margin-top: 5px;
           background: #FEFEFF;
           border-radius: 0px 0px 20px 20px;
